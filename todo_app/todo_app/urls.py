@@ -19,7 +19,12 @@ from django.urls import path
 from todo import views
 
 urlpatterns = [
+    # URL route for the Django admin site
     path('admin/', admin.site.urls),
-    path('del/<str:item_id>', views.remove, nam="del"),
+
+    # URL route to delete a todo item by its string ID
+    path('del/<str:item_id>', views.remove, name="del"),
+
+    # Duplicate URL route for the Django admin site — this is redundant and should be removed
     path('admin/', admin.site.urls),
 ]
